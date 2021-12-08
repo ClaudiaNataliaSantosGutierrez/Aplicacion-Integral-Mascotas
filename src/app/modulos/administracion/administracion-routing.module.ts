@@ -24,15 +24,19 @@ const routes: Routes = [
     component: CrearPersonaComponent
   },
   {
-    path: 'editar-persona',
+    path: 'editar-persona/:id',
     component: EditarPersonaComponent
   },
   {
-    path: 'eliminar-persona',
+    path: 'eliminar-persona/:id',
     component: EliminarPersonaComponent
   },
   {
     path: 'buscar-persona',
+    component: BuscarPersonaComponent
+  },
+  {
+    path: 'listar-personas',
     component: BuscarPersonaComponent
   },
   //Rutas para Mascotas

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ModeloCount } from 'src/app/modelos/count.modelo';
+import { ModeloPersona } from 'src/app/modelos/persona.modelo';
+import { PersonaService } from 'src/app/servicios/persona.service';
 
 @Component({
   selector: 'app-buscar-persona',
@@ -7,9 +11,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuscarPersonaComponent implements OnInit {
 
-  constructor() { }
+  //Objetos para traer la lista de personas y la cantidad de personas
+  listaPersonas: ModeloPersona[] = [];
+  cantidadPersonas: ModeloCount;
+
+  constructor(private personaServicio: PersonaService,
+    private route: ActivatedRoute) { 
+    this.cantidadPersonas = new ModeloCount();
+  }
 
   ngOnInit(): void {
+    this.ObtenerListadoPersonas();
+    this.ObtenerCantidadPersonas();
+  }
+
+  //Trae la lista de personas
+  ObtenerListadoPersonas(){
+    this.personaServicio.ObtenerPersonas().subscribe((datos: ModeloPersona[]) => {
+      this.listaPersonas = datos;
+    })
+  }
+
+  //Trae la cantidad de personas
+  ObtenerCantidadPersonas(){
+    this.personaServicio.ObtenerCantidadPersonas().subscribe((datos: ModeloCount) => {
+      this.cantidadPersonas = datos;
+    })
   }
 
 }

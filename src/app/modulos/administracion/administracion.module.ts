@@ -18,6 +18,7 @@ import { CrearVeterinarioComponent } from './veterinarios/crear-veterinario/crea
 import { EditarVeterinarioComponent } from './veterinarios/editar-veterinario/editar-veterinario.component';
 import { EliminarVeterinarioComponent } from './veterinarios/eliminar-veterinario/eliminar-veterinario.component';
 import { BuscarVeterinarioComponent } from './veterinarios/buscar-veterinario/buscar-veterinario.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -41,7 +42,9 @@ import { BuscarVeterinarioComponent } from './veterinarios/buscar-veterinario/bu
   ],
   imports: [
     CommonModule,
-    AdministracionRoutingModule
+    AdministracionRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdministracionModule { }
