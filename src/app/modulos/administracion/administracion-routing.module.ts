@@ -87,17 +87,21 @@ const routes: Routes = [
     component: CrearVeterinariaComponent
   },
   {
-    path: 'editar-veterinaria',
+    path: 'editar-veterinaria/:id',
     component: EditarVeterinariaComponent
   },
   {
-    path: 'eliminar-veterinaria',
+    path: 'eliminar-veterinaria/:id',
     component: EliminarVeterinariaComponent
   },
   {
     path: 'buscar-veterinaria',
     component: BuscarVeterinariaComponent
-  }
+  },
+  {
+    path: 'listar-veterinarias',
+    component: BuscarVeterinariaComponent
+  },
 ];
 
 @NgModule({
